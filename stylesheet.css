@@ -1,0 +1,352 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+::selection {
+    color: #212529;
+    background-color: #fff;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #fff;
+    background-color: #212529;
+}
+
+[tabindex="-1"]:focus:not(:focus-visible) {
+    outline: 0 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+.device,
+.device:before,
+.device:after {
+    transition: 0.3s all;
+}
+
+.device {
+    margin: auto;
+}
+
+.device .content::after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: 0.3s all;
+}
+
+.phone {
+    position: relative;
+    width: 260px;
+    height: 470px;
+    border: 8px #fff solid;
+    border-top-width: 40px;
+    border-bottom-width: 50px;
+    border-radius: 36px;
+    background: black;
+}
+
+.phone.landscape {
+    transform: rotate(-90deg);
+}
+
+
+/* The horizontal line on the top of the device */
+
+.phone:before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 5px;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ccc;
+    border-radius: 10px;
+}
+
+
+/* The circle on the bottom of the device */
+
+.phone:after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 50%;
+    bottom: -55px;
+    transform: translate(-50%, -50%);
+    background: #ccc;
+    border-radius: 50%;
+}
+
+
+/* The screen (or content) of the device */
+
+.phone .content::after {
+    content: 'Smartphones (portrait)';
+}
+
+.phone.landscape .content::after {
+    content: 'Smartphones (landscape)';
+    transform: rotate(90deg);
+}
+
+.tablet {
+    position: relative;
+    width: 310px;
+    height: 440px;
+    border: 8px #fff solid;
+    border-top-width: 50px;
+    border-bottom-width: 50px;
+    border-radius: 36px;
+    background: black;
+}
+
+.tablet.landscape {
+    transform: rotate(-90deg);
+}
+
+
+/* The horizontal line on the top of the device */
+
+.tablet:before {
+    content: '';
+    display: block;
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ccc;
+    border-radius: 10px;
+}
+
+
+/* The circle on the bottom of the device */
+
+.tablet:after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 50%;
+    bottom: -55px;
+    transform: translate(-50%, -50%);
+    background: #ccc;
+    border-radius: 50%;
+}
+
+
+/* The screen (or content) of the device */
+
+.tablet .content::after {
+    content: 'Tablets (portrait)'
+}
+
+.tablet.landscape .content::after {
+    content: 'Tablets (landscape)';
+    transform: rotate(90deg);
+}
+
+
+/* The laptop with borders */
+
+.laptop {
+    position: relative;
+    width: 400px;
+    height: 270px;
+    left: 50px;
+    border-radius: 6px;
+    border-style: solid;
+    border-color: #fff;
+    border-width: 8px 8px 32px;
+    background-color: black;
+}
+
+
+/* The keyboard of the laptop */
+
+.laptop:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 500px;
+    height: 20px;
+    background: #fff;
+    border-radius: 6px;
+    bottom: -55px;
+    left: -58px;
+}
+
+
+/* The top of the keyboard */
+
+.laptop:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100px;
+    height: 10px;
+    bottom: -45px;
+    left: 50%;
+    margin-left: -50px;
+    background: black;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    z-index: 1;
+}
+
+.laptop .content::after {
+    content: 'Laptops'
+}
+
+
+/* The desktop with borders */
+
+.desktop {
+    position: relative;
+    width: 360px;
+    height: 310px;
+    left: 50px;
+    border-radius: 6px;
+    border-style: solid;
+    border-color: #fff;
+    border-width: 8px 8px 32px;
+    background-color: black;
+}
+
+.desktop.large {
+    width: 420px;
+    height: 270px;
+}
+
+
+/* The keyboard of the desktop */
+
+.desktop:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 260px;
+    height: 5px;
+    background: #fff;
+    border-radius: 6px;
+    bottom: -55px;
+    left: 50%;
+    margin-left: -130px;
+}
+
+
+/* The top of the keyboard */
+
+.desktop:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 5px;
+    height: 18px;
+    bottom: -50px;
+    left: 50%;
+    margin-left: -2.5px;
+    background: #fff;
+    z-index: 1;
+}
+
+.desktop .content::after {
+    content: 'Small desktops'
+}
+
+.desktop.large .content::after {
+    content: 'Large screens'
+}
+
+.tech {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.tech img {
+    width: 10rem;
+}
+
+ul.social {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+ul.social li {
+    width: 33.33%;
+}
+
+ul.social a {
+    text-decoration: none;
+}
+
+ul.social a img {
+    width: 100px;
+}
+
+ul.social a img.hover {
+    opacity: 0;
+    transition: 0.3s all;
+}
+
+ul.social a:hover img.hover {
+    opacity: 1;
+    filter: brightness(100);
+}
+
+.social-stackoverflow .hover {
+    width: 230px;
+}
+
+.social-instagram .hover {
+    width: 180px;
+}
